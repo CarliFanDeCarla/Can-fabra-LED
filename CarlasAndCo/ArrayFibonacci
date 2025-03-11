@@ -1,0 +1,18 @@
+#include <FastLED.h>
+#define NUM_LEDS 179
+#define DATA_PIN 3
+CRGB leds[NUM_LEDS];
+int fibonacci[] = { 1, 2, 3, 5, 8 , 13, 21, 34, 55, 89};
+
+
+void setup() {
+   FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);  
+
+}
+
+void loop() {
+  for (int indice = 0; indice < 10; indice++){
+     leds[fibonacci[indice]] =  CRGB::Brown;
+  }
+  FastLED.show();
+}
